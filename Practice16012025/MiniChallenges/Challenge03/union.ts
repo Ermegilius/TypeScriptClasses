@@ -8,14 +8,14 @@ of the number rounded to two decimal points
 
 */
 function formatValue(value: string | number): string {
-	if (typeof value === 'string') {
-	return value.toLowerCase();
+	if (typeof value === "string") {
+		return value.toLowerCase();
 	} else {
-	return value.toFixed(2);
+		return value.toFixed(2);
 	}
-	}
-	
-	// Sample usage (do not modify)
-	console.log(formatValue("Welcome")); // "welcome"
-	console.log(formatValue(12)); // 12.00
-	console.log(formatValue(24.15329)); // 24.15
+}
+
+// Sample usage (do not modify)
+console.log(formatValue("Welcome")); // "welcome"
+console.log(formatValue(12)); // 12.00
+console.log(formatValue(24.15329)); // 24.15

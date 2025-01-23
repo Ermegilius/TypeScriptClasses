@@ -6,17 +6,20 @@ it will represent a row of products from the database.
 Infer the types of each item from the sample usage.
 */
 
-function showProduct(product) {
-	// Optional: refactor to destructuring
-	const id = product[0];
-	const name = product[1];
-	const price = product[2];
-	const available = product[3];
-	
+type ProductRow = [id: number, name: string, price: number, available: boolean];
+
+function showProduct(product: ProductRow): string {
+	const [id, name, price, available] = product;
+
 	if (available) {
-			return `[${id}] ${name} costs $${price}.`;
+		let result = `[${id}] ${name} costs $${price}.`;
+		console.log(result);
+
+		return result;
 	} else {
-			return `[${id}] ${name} is currently unavailable.`;
+		let result = `[${id}] ${name} is currently unavailable.`;
+		console.log(result);
+		return result;
 	}
 }
 

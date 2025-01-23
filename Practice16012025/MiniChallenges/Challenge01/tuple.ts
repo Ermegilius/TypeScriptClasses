@@ -7,7 +7,9 @@ While the first item represents the latitude
 and the second one represents the longitude,
 */
 
-function getPointDescription(point) {
+type Point = [number, number];
+
+function getPointDescription(point: Point): string {
 	return `Latitude: ${point[0]}, longitude: ${point[1]}`;
 }
 
