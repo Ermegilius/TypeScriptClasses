@@ -53,6 +53,6 @@ export class ProjectState extends State<Project> {
 			listenerFn(this.projects.slice());
 		}
 	}
-}
+} //end of ProjectState class
 
 export const projectState = ProjectState.getInstance();
