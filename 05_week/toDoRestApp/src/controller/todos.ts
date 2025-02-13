@@ -1,12 +1,13 @@
 import express, { RequestHandler } from "express";
 import { Todo } from "../model/todo";
+import { v4 as uuidv4 } from "uuid";
 
 const TODOS: Todo[] = [];
 
 export const createTodo: RequestHandler = (req, res, next) => {
 	const text = (req.body as { text: string }).text;
 
-	const newTodo = new Todo(Math.random().toString(), text);
+	const newTodo = new Todo(uuidv4(), text);
 	TODOS.push(newTodo);
 
 	res.status(200).json({ message: "Created the todo", createTodo: newTodo });
@@ -26,7 +27,6 @@ export const patchTodo: RequestHandler<{ id: string }> = (req, res, next) => {
 	}
 	TODOS[todoIndex] = new Todo(TODOS[todoIndex].id, updatedText);
 	res.json({ message: "Updated todo", updateTodo: TODOS[todoIndex] });
-
 	res.json({ todos: TODOS });
 };
 
