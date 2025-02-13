@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { createTodo } from "../controller/todos";
+import { createTodo, deleteTodo, getTodo, patchTodo } from "../controller/todos";
 
 const router = Router();
 
-router.get("/");
+router.get("/", getTodo);
 router.post("/", createTodo);
-router.patch("/:id");
-router.delete("/:id");
+router.patch("/:id", patchTodo);
+router.delete("/:id", deleteTodo);
 
 export default router;
