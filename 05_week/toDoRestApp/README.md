@@ -46,3 +46,11 @@ tsc --w
 ```sh
 npm start
 ```
+
+## Mongoose
+
+```sh
+npm i mongodb
+mongodb-shell
+mongosh
+```
