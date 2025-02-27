@@ -2,14 +2,18 @@ import express, { Request, Response, NextFunction } from "express";
 import todoRoutes from "./routes/todo";
 import { json, urlencoded } from "body-parser";
 import db from "mongoose";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-app.listen(9000);
+app.listen(9000, () => {
+	console.log("Server is running on port 9000");
+});
 
-app.use("/todo", todoRoutes);
+app.use("/todos", todoRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	res.status(500).json({ message: err.message });

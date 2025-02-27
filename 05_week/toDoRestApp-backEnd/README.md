@@ -51,6 +51,13 @@ npm start
 
 ```sh
 npm i mongodb
-mongodb-shell
+npm i mongosh
+npm install mongoose --save
 mongosh
+```
+
+```sh //mongosh
+use todos
+db.todos.insertOne({text: "exercise"})
+`db.todos.find().pretty()
 ```
